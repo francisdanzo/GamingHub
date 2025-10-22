@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>GamingHub - Gaming Portal</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+
+    <div class="particles" id="particles"></div>
+    
+    <header>
+      <div class="logo">⚡ GamingHub</div>
+      <nav>
+        <a href="/index.html">Accueil</a>
+        <a href="/jeux.html">Jeux</a>
+        <a href="#communaute">Communauté</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </header>
+
+    <section class="games-section" id="jeux">
+      <h2>🕹️ Jeux Arcade</h2>
+      <div class="games-grid">
+        <div class="game-card">
+          <h3>🐍 Snake Classic</h3>
+          <canvas id="snakeCanvas" class="game-canvas"></canvas>
+          <div class="score">Score: <span id="snakeScore">0</span></div>
+          <div class="game-controls">
+            <button class="game-btn" onclick="startSnake()">Démarrer</button>
+            <button class="game-btn" onclick="pauseSnake()">Pause</button>
+            <button class="game-btn" onclick="resetSnake()">Reset</button>
+          </div>
+          <p style="margin-top: 15px; opacity: 0.8">Flèches ← → ↑ ↓</p>
+        </div>
+
+        <div class="game-card">
+          <h3>🏓 Pong Retro</h3>
+          <canvas id="pongCanvas" class="game-canvas"></canvas>
+          <div class="score">
+            Vous: <span id="pongScore1">0</span> | IA:
+            <span id="pongScore2">0</span>
+          </div>
+          <div class="game-controls">
+            <button class="game-btn" onclick="startPong()">Démarrer</button>
+            <button class="game-btn" onclick="pausePong()">Pause</button>
+            <button class="game-btn" onclick="resetPong()">Reset</button>
+          </div>
+          <p style="margin-top: 15px; opacity: 0.8">Souris pour déplacer</p>
+        </div>
+
+        <div class="game-card">
+          <h3>🧱 Breakout</h3>
+          <canvas id="breakoutCanvas" class="game-canvas"></canvas>
+          <div class="score">
+            Score: <span id="breakoutScore">0</span> | Vies:
+            <span id="breakoutLives">3</span>
+          </div>
+          <div class="game-controls">
+            <button class="game-btn" onclick="startBreakout()">Démarrer</button>
+            <button class="game-btn" onclick="pauseBreakout()">Pause</button>
+            <button class="game-btn" onclick="resetBreakout()">Reset</button>
+          </div>
+          <p style="margin-top: 15px; opacity: 0.8">Souris pour déplacer</p>
+        </div>
+
+        <div class="game-card">
+          <h3>🐦 Flappy Bird</h3>
+          <canvas id="flappyCanvas" class="game-canvas"></canvas>
+          <div class="score">Score: <span id="flappyScore">0</span></div>
+          <div class="game-controls">
+            <button class="game-btn" onclick="startFlappy()">Démarrer</button>
+            <button class="game-btn" onclick="pauseFlappy()">Pause</button>
+            <button class="game-btn" onclick="resetFlappy()">Reset</button>
+          </div>
+          <p style="margin-top: 15px; opacity: 0.8">Cliquez ou ESPACE</p>
+        </div>
+
+        <div class="game-card">
+          <h3>👾 Space Invaders</h3>
+          <canvas id="invadersCanvas" class="game-canvas"></canvas>
+          <div class="score">
+            Score: <span id="invadersScore">0</span> | Vies:
+            <span id="invadersLives">3</span>
+          </div>
+          <div class="game-controls">
+            <button class="game-btn" onclick="startInvaders()">Démarrer</button>
+            <button class="game-btn" onclick="pauseInvaders()">Pause</button>
+            <button class="game-btn" onclick="resetInvaders()">Reset</button>
+          </div>
+          <p style="margin-top: 15px; opacity: 0.8">← → ESPACE</p>
+        </div>
+
+        <div class="game-card">
+          <h3>🟦 Tetris</h3>
+          <canvas id="tetrisCanvas" class="game-canvas"></canvas>
+          <div class="score">Score: <span id="tetrisScore">0</span></div>
+          <div class="game-controls">
+            <button class="game-btn" onclick="startTetris()">Démarrer</button>
+            <button class="game-btn" onclick="pauseTetris()">Pause</button>
+            <button class="game-btn" onclick="resetTetris()">Reset</button>
+          </div>
+          <p style="margin-top: 15px; opacity: 0.8">← → ↑ ↓</p>
+        </div>
+
+        <div class="game-card">
+          <h3>🚀 Asteroid</h3>
+          <canvas id="asteroidCanvas" class="game-canvas"></canvas>
+          <div class="score">Score: <span id="asteroidScore">0</span></div>
+          <div class="game-controls">
+            <button class="game-btn" onclick="startAsteroid()">Démarrer</button>
+            <button class="game-btn" onclick="pauseAsteroid()">Pause</button>
+            <button class="game-btn" onclick="resetAsteroid()">Reset</button>
+          </div>
+          <p style="margin-top: 15px; opacity: 0.8">← → ↑ ESPACE</p>
+        </div>
+
+        <div class="game-card">
+          <h3>🧠 Memory</h3>
+          <canvas id="memoryCanvas" class="game-canvas"></canvas>
+          <div class="score">Paires: <span id="memoryScore">0</span>/8</div>
+          <div class="game-controls">
+            <button class="game-btn" onclick="startMemory()">Démarrer</button>
+            <button class="game-btn" onclick="pauseMemory()">Pause</button>
+            <button class="game-btn" onclick="resetMemory()">Reset</button>
+          </div>
+          <p style="margin-top: 15px; opacity: 0.8">Cliquez sur les cartes</p>
+        </div>
+
+        <div class="game-card">
+          <h3>🎯 Maze Runner</h3>
+          <canvas id="mazeCanvas" class="game-canvas"></canvas>
+          <div class="score">Temps: <span id="mazeTime">0</span>s</div>
+          <div class="game-controls">
+            <button class="game-btn" onclick="startMaze()">Démarrer</button>
+            <button class="game-btn" onclick="pauseMaze()">Pause</button>
+            <button class="game-btn" onclick="resetMaze()">Reset</button>
+          </div>
+          <p style="margin-top: 15px; opacity: 0.8">Flèches vers sortie</p>
+        </div>
+
+        <div class="game-card">
+          <h3>🍎 Catch & Dodge</h3>
+          <canvas id="catchCanvas" class="game-canvas"></canvas>
+          <div class="score">
+            Score: <span id="catchScore">0</span> | Vies:
+            <span id="catchLives">3</span>
+          </div>
+          <div class="game-controls">
+            <button class="game-btn" onclick="startCatch()">Démarrer</button>
+            <button class="game-btn" onclick="pauseCatch()">Pause</button>
+            <button class="game-btn" onclick="resetCatch()">Reset</button>
+          </div>
+          <p style="margin-top: 15px; opacity: 0.8">Souris attraper/éviter</p>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <p>
+        © 2025 GamingHub - Tous droits réservés
+      </p>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>

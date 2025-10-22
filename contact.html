@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact - GamingHub</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="particles" id="particles"></div>
+    <header>
+        <div class="logo">⚡ GamingHub</div>
+        <nav>
+            <a href="https://francisdanzo.github.io/GamingHub/index.html">Accueil</a>
+            <a href="https://francisdanzo.github.io/GamingHub/jeux.html">Jeux</a>
+            <a href="#communaute">Communauté</a>
+            <a href="https://francisdanzo.github.io/GamingHub/contact.html">Contact</a>
+        </nav>
+    </header>
+    <section class="hero" id="contact">
+        <h1>Contactez-nous</h1>
+        <p>Une question, une suggestion ou un bug à signaler ? Remplissez le formulaire ci-dessous :</p>
+        <form class="contact-form" style="max-width:500px;margin:40px auto;text-align:left;background:rgba(26,26,46,0.8);padding:30px;border-radius:20px;box-shadow:0 10px 40px rgba(0,255,255,0.2);">
+            <label for="name">Nom :</label>
+            <input type="text" id="name" name="name" required style="width:100%;padding:10px;margin-bottom:15px;border-radius:8px;border:none;">
+            <label for="email">Email :</label>
+            <input type="email" id="email" name="email" required style="width:100%;padding:10px;margin-bottom:15px;border-radius:8px;border:none;">
+            <label for="message">Message :</label>
+            <textarea id="message" name="message" rows="5" required style="width:100%;padding:10px;margin-bottom:15px;border-radius:8px;border:none;"></textarea>
+            <button type="submit" class="cta-button" style="width:100%;">Envoyer</button>
+        </form>
+    </section>
+    <footer>
+        <p>© 2025 GamingHub - Tous droits réservés</p>
+    </footer>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

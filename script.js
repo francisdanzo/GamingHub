@@ -35,11 +35,15 @@ window.addEventListener('DOMContentLoaded', function() {
         if (sPause) return;
         const h = {x: snake[0].x + sdir.x, y: snake[0].y + sdir.y};
         if (h.x < 0 || h.x >= sc.width || h.y < 0 || h.y >= sc.height) {
-            clearInterval(sGame); sGame = null; alert('Game Over! Score: ' + sScore); return;
+            clearInterval(sGame); sGame = null;
+            showGameOver(sctx, sc.width, sc.height, 'Score: ' + sScore);
+            return;
         }
         for (let s of snake) {
             if (h.x === s.x && h.y === s.y) {
-                clearInterval(sGame); sGame = null; alert('Game Over! Score: ' + sScore); return;
+                clearInterval(sGame); sGame = null;
+                showGameOver(sctx, sc.width, sc.height, 'Score: ' + sScore);
+                return;
             }
         }
         snake.unshift(h);
@@ -554,6 +558,22 @@ window.addEventListener('DOMContentLoaded', function() {
             cctx.fillStyle=f.type==='good'?'#0f0':'#f00';
             cctx.fillRect(f.x,f.y,f.w,f.h);
         }
+    }
+
+    function showGameOver(ctx, width, height, scoreText) {
+        ctx.save();
+        ctx.globalAlpha = 0.85;
+        ctx.fillStyle = "#1a1a2e";
+        ctx.fillRect(0, 0, width, height);
+        ctx.globalAlpha = 1;
+        ctx.fillStyle = "#ff00ff";
+        ctx.font = "bold 48px Arial";
+        ctx.textAlign = "center";
+        ctx.fillText("GAME OVER", width / 2, height / 2 - 20);
+        ctx.font = "bold 28px Arial";
+        ctx.fillStyle = "#00ffff";
+        ctx.fillText(scoreText, width / 2, height / 2 + 30);
+        ctx.restore();
     }
 
     window.startSnake = startSnake;

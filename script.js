@@ -67,10 +67,10 @@ window.addEventListener('DOMContentLoaded', function() {
 
     document.addEventListener('keydown', e => {
         if (!sGame) return;
-        if (e.key === 'ArrowUp' && sdir.y === 0) sdir = {x: 0, y: -10};
-        if (e.key === 'ArrowDown' && sdir.y === 0) sdir = {x: 0, y: 10};
-        if (e.key === 'ArrowLeft' && sdir.x === 0) sdir = {x: -10, y: 0};
-        if (e.key === 'ArrowRight' && sdir.x === 0) sdir = {x: 10, y: 0};
+        if ((e.key === 'w' || e.key === 'W') && sdir.y === 0) sdir = {x: 0, y: -10};
+        if ((e.key === 's' || e.key === 'S') && sdir.y === 0) sdir = {x: 0, y: 10};
+        if ((e.key === 'a' || e.key === 'A') && sdir.x === 0) sdir = {x: -10, y: 0};
+        if ((e.key === 'd' || e.key === 'D') && sdir.x === 0) sdir = {x: 10, y: 0};
     });
 
     // PONG

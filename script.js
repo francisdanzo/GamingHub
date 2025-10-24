@@ -1,14 +1,4 @@
 window.addEventListener('DOMContentLoaded', function() {
-    // Particles
-    const p = document.getElementById('particles');
-    for (let i = 0; i < 50; i++) {
-        const pt = document.createElement('div');
-        pt.className = 'particle';
-        pt.style.left = Math.random() * 100 + '%';
-        pt.style.animationDelay = Math.random() * 8 + 's';
-        pt.style.animationDuration = (Math.random() * 5 + 5) + 's';
-        p.appendChild(pt);
-    }
 
     // SNAKE
     const sc = document.getElementById('snakeCanvas');
